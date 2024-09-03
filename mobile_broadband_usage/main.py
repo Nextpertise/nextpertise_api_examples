@@ -95,5 +95,6 @@ for connection in active_mobile_connections:
 filename = f"mobile_connection_details"
 if debtor_code:
     filename += f"_{debtor_code.lower()}"
-with open(f"{filename}.csv", "wb") as f:
+filename = f"{filename}_{billing_cycle}.csv"
+with open(filename, "wb") as f:
     f.write(output.getvalue().encode('utf-8'))
